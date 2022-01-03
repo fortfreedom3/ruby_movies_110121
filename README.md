@@ -1,130 +1,63 @@
 # Activity
+[Clone down starter code here](https://github.com/learn-co-students/Phase-3-movie_app_101121) 
 
 # Deliverables
-Add migrations relationships. Our tickets should belong to one movie, a movie can have many tickets. We want some new models for managing our snack stand at the movie theater. A receipt can have many receipt_line_items, and many foods through receipt_line_items. A food can have many receipt_line_items, and many receipts through receipt_line_items. ReceiptLineItem will be the join model.
+Create sinatra routes 
 
->Note: if you get stuck review 
-Active Record Migrations, Writing Migrations, Intro to Rake, 
+>Note: if you get stuck review Sinatra with Active Record: GET Requests
+>Note: `bundle exec rerun -b 'rackup config.ru'` will run your server.
 
-0. Draw out a Domain Model for the following.
-
-one-to-many
-Ticket: name, price movie_id
-Movie: title, director, description, showing
-
-many-to-many
-Receipt: customer_name
-Food: food_name, price
-ReceiptLineItem: receipt_id, food_id
+0. Clone down the starter code and run bundle and migrate. Verify your migration was successful. Review your models to verify the associations are set up correctly. Create some seeds manually or using the faker gem.  
 
 
-
-1. If you haven't already, add an id column to tickets that references movie_id.
->
+1. In ApplicationController create a GET route for Movies. Run your server with `bundle exec rerun -b 'rackup config.ru'` if you haven't already. Verify your route in the browser at `http://localhost:9292/movies`.
  <details>
       <summary>
         solution 
       </summary>
-      `bundle exec rake db:create_migration NAME=add_column_to_tickets`
       <hr/>
         <img src="assets/image_1.png"
-        alt="add column"
+        alt="/movies"
         style="margin-right: 10px;" />
       <hr/>
  </details>
 
-2. Use rake to create three migrations one named `create_receipt`, `create_food`, and `create_receipt_line_item` with the attributes listed in step 0.  
+2. use create react app to create a client. `npx create-react-app client`
  <details>
       <summary>
         solution 
       </summary>
-      bundle exec rake db:create_migration NAME=create_receipts
-      bundle exec rake db:create_migration NAME=create_foods  
-      bundle exec rake db:create_migration NAME=create_receipt_line_items
       <hr/>
         <img src="assets/image_2.png"
-        alt="receipts"
-        style="margin-right: 10px;" />
-        <img src="assets/image_3.png"
-        alt="foods"
-        style="margin-right: 10px;" />
-        <img src="assets/image_4.png"
-        alt="receipt_line_items"
+        alt="client"
         style="margin-right: 10px;" />
       <hr/>
  </details>
 
-3. Create models for `Receipt`, `Food`, and `ReceiptLineItems` 
+3. In the client, in App.js require in useState and useEffect. Create a fetch call with useEffect to the movies route that console.logs the response.
  <details>
       <summary>
         solution 
       </summary>
       <hr/>
-        <img src="assets/image_5.png"
-        alt="files"
-        style="margin-right: 10px;" />
-        <img src="assets/image_6.png"
-        alt="foods"
-        style="margin-right: 10px;" />
-        <img src="assets/image_7.png"
-        alt="receipt"
-        style="margin-right: 10px;" />
-        <img src="assets/image_8.png"
-        alt="receipt_line_items"
+        <img src="assets/image_3.png"
+        alt="useEffect"
         style="margin-right: 10px;" />
       <hr/>
  </details>
 
 
- 4. run `bundle exec rake db:migrate` to migrate your tables. Verify the schema.rb was created correctly.
+ 4. Set movies to state, and render the title of each movie in App.
   <details>
       <summary>
         solution 
       </summary>
-      <hr/>
-      <img src="assets/image_5.png" alt="migration terminal" style="margin-right: 10px;" />
-        
-      <img src="assets/image_6.png" alt="schema" style="margin-right: 10px;" />
+      <hr/>        
+      <img src="assets/image_3.png" alt="titles" style="margin-right: 10px;" />
       <hr/>
  </details>
 
- 5. Add a has many tickets association to the Movie model and a belongs to movie association to the Ticket model. 
+Bonus
+  5. Make a route for tickets and display every ticket with its name and price on the browser. 
 
-   <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
-      <img src="assets/image_9.png" alt="has many tickets" style="margin-right: 10px;" />
-        
-      <img src="assets/image_10.png" alt="belongs to movie" style="margin-right: 10px;" />
-      <hr/>
- </details>
-
- 6. Add two belongs to association to the ReceiptLineItem model. Add a has many receipt_line_items and a has many foods through receipt_line_items association to the Receipt model. Finally, add a has many receipt_line_items and a has many receipts through receipt_line_items association to the Food model.
-   <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
-      <img src="assets/image11.png" alt="join model" style="margin-right: 10px;" />
-        
-      <img src="assets/image_12.png" alt="receipt has many through" style="margin-right: 10px;" />
-
-      <img src="assets/image_13.png" alt="food has many through" style="margin-right: 10px;" />
-      <hr/>
- </details>
-
- 7. Create some seed data and test these associations in the console. 
-
-    <details>
-      <summary>
-      </summary>
-      <hr/>
-      <img src="assets/image14.png" alt="seeds" style="margin-right: 10px;" />
-      <hr/>
- </details>
-
-
-
- 
+  6. Make a route for tickets that dynamically displays one ticket.

@@ -9,5 +9,6 @@ Ticket.create({name:'rose', price:5.00})
 Ticket.create({name:'brooklyn', price:5.00})
 Ticket.create({name:'connor', price:5.00})
 
+
 puts '🍃'
 
