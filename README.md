@@ -22,42 +22,38 @@ Create sinatra routes
       <hr/>
  </details>
 
-2. use create react app to create a client. `npx create-react-app client`
- <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
-        <img src="assets/image_2.png"
-        alt="client"
-        style="margin-right: 10px;" />
-      <hr/>
- </details>
+  
 
-3. In the client, in App.js require in useState and useEffect. Create a fetch call with useEffect to the movies route that console.logs the response.
- <details>
+2. Make a route for tickets that dynamically displays one Movie.
+<details>
       <summary>
         solution 
       </summary>
       <hr/>
         <img src="assets/image_3.png"
-        alt="useEffect"
+        alt="/movies"
         style="margin-right: 10px;" />
       <hr/>
  </details>
 
+3. Practice debugging by putting a binding.pry in one of your routes. When you hit the pry check  out the params hash. 
 
- 4. Set movies to state, and render the title of each movie in App.
-  <details>
+<details>
       <summary>
         solution 
       </summary>
-      <hr/>        
-      <img src="assets/image_3.png" alt="titles" style="margin-right: 10px;" />
+      <hr/>
+        <img src="assets/image_4.png"
+        alt="/movies"
+        style="margin-right: 10px;" />
+         <img src="assets/image_5.png"
+        alt="/movies"
+        style="margin-right: 10px;" />
       <hr/>
  </details>
 
-Bonus
+Bonus 
+  4. Move the movie routes into their own controller that inherits from application controller. Mount the controller in config.ru.
   5. Make a route for tickets and display every ticket with its name and price on the browser. 
 
   6. Make a route for tickets that dynamically displays one ticket.
