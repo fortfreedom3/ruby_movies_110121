@@ -52,7 +52,8 @@ Create sinatra routes
       <hr/>
  </details>
 
-Bonus 
+Bonus  
+
   4. Move the movie routes into their own controller that inherits from application controller. Mount the controller in config.ru.
   5. Make a route for tickets and display every ticket with its name and price on the browser. 
 
