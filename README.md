@@ -24,7 +24,7 @@ Create sinatra routes
 
   
 
-2. Make a route for tickets that dynamically displays one Movie.
+2. Make a route for movies that dynamically displays one Movie.
 <details>
       <summary>
         solution 
